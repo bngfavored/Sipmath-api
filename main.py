@@ -5,7 +5,6 @@ from fastapi import FastAPI
 from typing import Optional, List
 from pydantic import BaseModel
 import json
-from mangum import Mangum
 
 app = FastAPI()
 
