@@ -2,14 +2,14 @@ from PySIP import PySIP3library as PySIP
 import numpy as np
 import pandas as pd
 from fastapi import FastAPI
-from typing import Optional, List
+from typing import Optional, List, Union
 from pydantic import BaseModel
 import json
 
 app = FastAPI()
 
 class SIPDataModel(BaseModel):
-    data: List[List[int]]
+    data: List[List[Union[int, float]]]
     variable_name: List[str]
     filename: str
     author: str
@@ -23,17 +23,11 @@ class SIPDataModel(BaseModel):
 def sipmath_json(sip_data: SIPDataModel):
     # Convert data into correct format
     df = pd.DataFrame(sip_data.data).T
-    df_probs=np.array(sip_data.probs).T
-    print(df.shape)
-    print(df_probs.shape)
-    print(len(df)==len(df_probs))
     df.columns = sip_data.variable_name
-    print(df)
     filename = f"{sip_data.filename}.SIPmath"
     data_dict_for_JSON = dict(boundedness=sip_data.boundedness,
                     bounds=sip_data.bounds,
                     term_saved=sip_data.term_saved)
-    print("probs in JSON", sip_data.probs)
     PySIP.Json(SIPdata=df,
                     file_name=filename,
                     author=sip_data.author,
