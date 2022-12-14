@@ -15,7 +15,7 @@ class SIPDataModel(BaseModel):
     author: str
     dependence: Optional[str] = 'independent'
     boundedness: List[str]
-    bounds: List[List[int]]
+    bounds: List[List[Union[int, float]]]
     term_saved: List[int]
     probs: List[List[float]]
 
