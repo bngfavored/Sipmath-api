@@ -41,4 +41,4 @@ def sipmath_json(sip_data: SIPDataModel):
                     setupInputs=data_dict_for_JSON,
                     probs=sip_data.probs)
     with open(filename, 'rb') as f:
-        return {"sipmath": json.load(f)}
+        return json.load(f)
