@@ -29,7 +29,7 @@ The SIPmath REST API only has a POST method at the endpoint '/sipmath-json'.
 ## Using body parameters
 
 Body parameters allow you to pass additional data to the API. This is needed to create the SIPmath file. Below is an example body:
-
+```yaml
 {
     "data": [
       [
@@ -63,7 +63,7 @@ Body parameters allow you to pass additional data to the API. This is needed to 
       [0.100,0.500,0.900],[0.100,0.500,0.900]
     ]
   }
-
+```
 The "data" key contains an array of arrays of integers, the data points, i.e., flight hours.
 The "probs" key contains an array of arrays of floats, the quantiles for the data points.
 The "variable_name" key contains an array of strings that label each array for the "data" key.
@@ -88,7 +88,7 @@ Additionally, the response will include headers that give more details about the
 The response body is in JSON format that is based on the "[SIPmath™ 3.0 Standard](https://www.probabilitymanagement.org/30-standard)."
 
 Example response:
-
+```yaml
 {
     "name": "Test.SIPmath",
     "objectType": "sipModel",
@@ -1383,3 +1383,4 @@ Example response:
     ],
     "version": "1"
 }
+```
