@@ -1,20 +1,6 @@
 # SIPmath-API
 A Rest API for the PySIPmath library
 
----
-title: Getting started with the REST API
-intro: 'Learn how to use the SIPmath REST API.'
-versions:
-  fpt: '*'
-  ghes: '*'
-  ghae: '*'
-  ghec: '*'
-topics:
-  - API
-shortTitle: Using the API
-miniTocMaxHeadingLevel: 3
----
-
 ## About the SIPmath REST API
 
 This article describes how to use the SIPmath REST API. For an overview of SIPmath, see "[SIPmath™ Standards](https://www.probabilitymanagement.org/sipmath)."
