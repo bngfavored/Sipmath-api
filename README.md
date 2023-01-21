@@ -65,13 +65,21 @@ Body parameters allow you to pass additional data to the API. This is needed to 
   }
 ```
 The "data" key contains an array of arrays of integers, the data points, i.e., flight hours.
+
 The "probs" key contains an array of arrays of floats, the quantiles for the data points.
+
 The "variable_name" key contains an array of strings that label each array for the "data" key.
+
 The "filename" key contains a string that names the file.
+
 The "author" key contains a string that defines the requestor's name.
+
 The "boundedness" key contains an array of strings that defines each variable's boundedness of metalog distribution. Possible values are 'u' for unbounded, 'sl' for semi-bounded lower, 'su' for semi-bounded upper, and 'b' for bounded on both sides.
+
 The "bounds" key contains an array of arrays of up to 2 integer values bounds of metalog distribution. Default values of [0,1] must be supplied even when using 'u' or unbounded.
+
 The "term_saved" key contains an array of arrays of integers between 3 and 30. Sets the number of A coefficients (N value) for fitting the SIPs.
+
 The optional "seeds" key contains an array of arrays of integers, floats, or strings for the seeds in this order entity, varId, seed3, and seed4 in the HDR. If not set, the default is to create seeds where the entity = 1, the varId = a random int between 1 and 10,000,000, seed3 = 0, and seed4 = 0 
 
 ## Using the response
